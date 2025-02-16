@@ -6,7 +6,7 @@ on: workflow_dispatch
 jobs: 
  delete-data:
    runs-on: ubuntu-latest
-    steps: 
+   steps: 
      - name: echo data first
        run: |
         echo '{
@@ -17,9 +17,9 @@ jobs:
           }' > data.json
         cat data.json
 
-    - name: delete json data
-      run:|
-       jq 'del(.type)' data.json > temp.json && mv temp.json data.json
-       echo data.json
+     - name: delete json data
+       run: |
+        jq 'del(.type)' data.json > temp.json && mv temp.json data.json
+        echo data.json
 
 
