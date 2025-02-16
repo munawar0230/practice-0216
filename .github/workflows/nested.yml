@@ -21,12 +21,12 @@ jobs:
             
             ]
           }
-        ]
-        }' > data.json
-        cat data.json
+         ]
+         }' > data.json
+         cat data.json
     
-     - name: Extract Data
-       run: |
-        INSTANCE_ID=$( jq -r '.Reservations[0].Instances[0].Instance_id' data.json)
-        echo INSTANCE_ID=$INSTANCE_ID
+      - name: Extract Data
+        run: |
+         INSTANCE_ID=$( jq -r '.Reservations[0].Instances[0].Instance_id' data.json)
+         echo INSTANCE_ID=$INSTANCE_ID
       
