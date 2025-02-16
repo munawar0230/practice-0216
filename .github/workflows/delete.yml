@@ -12,7 +12,7 @@ jobs:
         echo '{
           "instance_id":"12345678"
           "AMI_ID":"qwerty_123"
-          "public_ip":"198.10.2.1
+          "public_ip":"198.10.2.1"
           "type":"micro"
           }' > data.json
         cat data.json
