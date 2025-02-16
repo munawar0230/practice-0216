@@ -28,5 +28,9 @@ jobs:
       - name: Extract Data
         run: |
          INSTANCE_ID=$( jq -r '.Reservations[0].Instances[0].Instance_id' data.json)
+         Sate_ID=$( jq -r '.Reservations[0].Instances[0].state.Name' data.json)
+         PUBLIC_IP=$( jq -r '.Reservations[0].Instances[0].publicipaddress' data.json)
          echo INSTANCE_ID=$INSTANCE_ID
+         echo State_ID=$State_ID
+         echo PUBLIC_ID=$PUBLIC_IP
       
