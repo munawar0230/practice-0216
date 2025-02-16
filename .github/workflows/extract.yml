@@ -17,19 +17,19 @@ jobs:
 
      - name: extract the values
        run: |
-        INSTANCE_ID=$( jq -r .'instance_id' data.json )
-        PUBLIC_IP=$( jq -r .'public_ip_address' data.json )
-        INSTANCE_TYPE=$( jq -r .'instance_type' data.json )
+        INSTANCE_ID=$(jq -rc .'instance_id' data.json)
+        PUBLIC_IP=$(jq -r .'public_ip_address' data.json)
+        INSTANCE_TYPE=$(jq -rc .'instance_type' data.json)
 
         echo "INSTANCE_ID=$INSTANCE_ID >> GITHUB_ENV
         echo "PUBLIC_IP=$PUBLIC_IP >> GITHUB_ENV
-        echo "INSTANCE_ID=$INSTANCE_ID >> GITHUB_ENV
+        echo "INSTANCE_TYPE=$INSTANCE_TYPE >> GITHUB_ENV
 
      - name: print values
        run: |
         echo "INSTANCE_ID=$INSTANCE_ID 
         echo "PUBLIC_IP=$PUBLIC_IP 
-        echo "INSTANCE_ID=$INSTANCE_ID 
+        echo "INSTANCE_TYPE=$INSTANCE_TYPE 
 
       
         
