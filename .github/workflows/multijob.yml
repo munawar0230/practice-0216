@@ -1,0 +1,16 @@
+name: Multijob workflow
+
+on: 
+  push:
+   branches: main
+  workflow_dispatch:
+jobs:
+  test-matrix:
+    runs-on: ${{ matrix.os}}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest,macos-latest]
+    steps:
+     - name: Print os name
+       run: echo "Running on ${{ matrix.os}}"
+
