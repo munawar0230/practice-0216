@@ -1,0 +1,27 @@
+name: Nested Json Data
+
+on: workflow_dispatch
+
+jobs:
+  nested-data:
+   runs-on: ubuntu-latest
+    steps: 
+     -name: Create nested Data
+      run: |
+        echo '{
+        "Reservations": [
+          { 
+            "Instances": [
+              {
+                "Instance_id":"123456789",
+                "state": {"Name": "Running"},
+                "publicipaddress": "192.168.10.2.2"
+              
+              }
+            
+            ]
+          }
+        ]
+        }' > data.json
+        cat data.json
+      
