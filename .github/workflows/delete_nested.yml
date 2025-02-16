@@ -1,0 +1,33 @@
+name: delete nested data
+
+on: workflow_dispatch
+
+jobs:
+ delete-data:
+   runs-on: ubuntu-latest
+   steps:
+     - name: data json echo
+       run: |
+        echo '{
+         "Reservations": [
+          { 
+            "Instances": [
+              {
+                "Instance_id":"123456789",
+                "state": {"Name": "Running"},
+                "publicipaddress": "192.168.10.2.2"
+              
+              }
+            
+            ]
+          }
+         ]
+         }' > data.json
+         cat data.json
+
+         
+     - name: remove nested data
+       run: |
+        jq '.Reservations[0].Instances[0] | del(.Instance_id)' data.json > tmp.json && mv tmp.json data.json
+        cat data.json
+    
