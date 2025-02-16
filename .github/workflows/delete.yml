@@ -19,7 +19,7 @@ jobs:
 
      - name: delete json data
        run: |
-        jq 'del(.type)' data.json > temp.json && mv temp.json data.json
+        jq 'del(.instance_id)' data.json > temp.json && mv temp.json data.json
         echo data.json
 
 
