@@ -27,9 +27,9 @@ jobs:
 
      - name: print values
        run: |
-        echo "INSTANCE_ID: $INSTANCE_ID" 
-        echo "PUBLIC_IP: $PUBLIC_IP" 
-        echo "INSTANCE_TYPE: $INSTANCE_TYPE" 
+        echo "INSTANCE ID: $INSTANCE_ID" 
+        echo "PUBLIC IP: $PUBLIC_IP" 
+        echo "INSTANCE TYPE: $INSTANCE_TYPE" 
 
       
         
