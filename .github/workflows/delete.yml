@@ -10,16 +10,16 @@ jobs:
      - name: echo data first
        run: |
         echo '{
-          "instance_id":"12345678"
-          "AMI_ID":"qwerty_123"
-          "public_ip":"198.10.2.1"
-          "type":"micro"
+          "instance_id": "12345678"
+          "AMI_ID": "qwerty_123"
+          "public_ip": "198.10.2.1"
+          "type": "micro"
           }' > data.json
         cat data.json
 
      - name: delete json data
        run: |
         jq 'del(.instance_id)' data.json > temp.json && mv temp.json data.json
-        echo data.json
+        cat data.json
 
 
