@@ -13,7 +13,7 @@ jobs:
          "public_ip_address": "192.168.1.10",
          "private_ip": "198.56.2.3",
          "instance_type": "t2_micro"
-         }' > data.json
+        }' > data.json
 
      - name: extract the values
        run: |
