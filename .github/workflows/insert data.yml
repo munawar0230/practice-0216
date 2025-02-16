@@ -1,0 +1,20 @@
+name: Insert data in JSON file
+
+on: workflow_dispatch
+
+jobs:
+  insert-data:
+    runs-on: ubuntu-latest
+    steps: 
+     - name: echo data first
+       run: |
+         echo '{
+           "instance_id":"abc123456",
+           "instance_type":"t2_micro"
+           }' > vm.json
+         cat vm.json
+
+     - name: insert data in Json
+       run: |
+        jq '.+ { "us_region":"east" }' vm.json >> temp.json mv temp.json vm.json
+        cat vm.json
