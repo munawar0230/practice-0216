@@ -5,11 +5,11 @@ on: workflow_dispatch
 jobs:
   nested-data:
    runs-on: ubuntu-latest
-    steps: 
-     -name: Create nested Data
-      run: |
-        echo '{
-        "Reservations": [
+   steps: 
+      - name: Create nested Data
+        run: |
+         echo '{
+         "Reservations": [
           { 
             "Instances": [
               {
@@ -21,7 +21,7 @@ jobs:
             
             ]
           }
-        ]
-        }' > data.json
-        cat data.json
+         ]
+         }' > data.json
+         cat data.json
       
