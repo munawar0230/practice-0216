@@ -1,0 +1,25 @@
+name: delete data from JSON
+
+on: workflow_dispatch
+
+
+jobs: 
+ delete-data:
+   runs-on: ubuntu-latest
+    steps: 
+     - name: echo data first
+       run: |
+        echo '{
+          "instance_id":"12345678"
+          "AMI_ID":"qwerty_123"
+          "public_ip":"198.10.2.1
+          "type":"micro"
+          }' > data.json
+        cat data.json
+
+    - name: delete json data
+      run:|
+       jq 'del(.type)' data.json > temp.json && mv temp.json data.json
+       echo data.json
+
+
